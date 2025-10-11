@@ -53,8 +53,8 @@ $sql =  "INSERT INTO `trip US `.'trip' (`name`, `age`, `gender`, `email`, `phone
 <body>
     <img class="bg" src="bg.jpg" alt="IIT kharagpur"></img>
     <div class ="container">
-        <h1> Welcome to IIT kharagpur US trip form  </h1>
-        <p> Enter your details and submit this form  to confirm your participation in the trip </p>
+        <h1>Welcome to Hacker's Throne </h1>
+        <p> Enter  your details and submit this form  to confirm your participation in the hackathon </p>
         <?php
         if ($insert==true ){
          echo "<p class='submitmsg'>Thanks for submitting your form. We are happy to see you joining us for the US trip with us </p>";
