@@ -66,7 +66,7 @@ $sql =  "INSERT INTO `trip US `.'trip' (`name`, `age`, `gender`, `email`, `phone
             <input type ="text" name=" gender " id="gender" placeholder ="Enter your gender">
             <input type ="text" name=" email " id="email" placeholder ="Enter your email">
             <input type ="text" name=" phone " id="phone" placeholder ="Enter your phone">
-            <textarea name ="desc" id="desc" cols="30" rows="10" placeholder="Enter any other information here"></textarea>
+            <textarea name ="desc" id="desc" cols="30" rows="10" placeholder="Enter more  information here. We are happy to help you :)"></textarea>
             <button class="btn">Submit</button>
              <!-- <button class="btn">Reset</button> -->
 
