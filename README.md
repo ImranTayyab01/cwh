@@ -61,5 +61,3 @@ Submit the form and the row will appear in `trip_us`.`trip`.
 
 - **[Imran Tayyab](https://github.com/ImranTayyab01)** — author, original project
 - **[Awais Asghar](https://github.com/Awais-Asghar)** — bug fixes, SQL injection hardening, validation, documentation
-
-Contributions are welcome — fork the repo, create a branch, and open a pull request.
