@@ -1,4 +1,4 @@
-# Hacker's Throne — Hackathon Signup Form
+# Hacker's Throne - Hackathon Signup Form
 
 A small PHP web app: a signup form for a hackathon trip. Visitors enter their details, the
 submission is validated in the browser and again on the server, and the entry is stored in a
