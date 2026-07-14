@@ -30,7 +30,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $con = mysqli_connect($server, $username, $password, $database);
 
         if (!$con) {
-            die("Connection to the database failed due to " . mysqli_connect_error());
+            error_log("DB connect failed: " . mysqli_connect_error());
+            die("Sorry, something went wrong on our side. Please try again later.");
         }
 
         // Prepared statement: user input is never concatenated into the query,
