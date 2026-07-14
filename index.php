@@ -68,17 +68,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to travel form</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alan+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <title>Hacker's Throne, hackathon signup</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <img class="bg" src="bg.jpg" alt="Hackathon venue">
     <div class="container">
         <h1>Welcome to Hacker's Throne</h1>
-        <p>Enter your details and submit this form to confirm your participation in the hackathon</p>
+        <p>Enter your details and submit this form to confirm your participation in the hackathon.</p>
 
         <?php if ($insert): ?>
             <p class="submitmsg success">Thanks for submitting your form. We are happy to see you joining us for the US trip.</p>
@@ -89,13 +85,38 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <?php endforeach; ?>
 
         <form action="index.php" method="post" novalidate>
-            <input type="text" name="name" id="name" placeholder="Enter your name">
-            <input type="text" name="age" id="age" placeholder="Enter your age">
-            <input type="text" name="gender" id="gender" placeholder="Enter your gender">
-            <input type="email" name="email" id="email" placeholder="Enter your email">
-            <input type="text" name="phone" id="phone" placeholder="Enter your phone">
-            <textarea name="desc" id="desc" cols="30" rows="10" placeholder="Enter more information here. We are happy to help you :)"></textarea>
-            <button class="btn" type="submit">Submit</button>
+            <div class="field">
+                <label for="name">Full name</label>
+                <input type="text" name="name" id="name" placeholder="Ada Lovelace" autocomplete="name">
+            </div>
+
+            <div class="row">
+                <div class="field">
+                    <label for="age">Age</label>
+                    <input type="text" name="age" id="age" placeholder="21" inputmode="numeric">
+                </div>
+                <div class="field">
+                    <label for="gender">Gender</label>
+                    <input type="text" name="gender" id="gender" placeholder="Optional">
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="email">Email address</label>
+                <input type="email" name="email" id="email" placeholder="you@example.com" autocomplete="email">
+            </div>
+
+            <div class="field">
+                <label for="phone">Phone number</label>
+                <input type="text" name="phone" id="phone" placeholder="Optional" autocomplete="tel">
+            </div>
+
+            <div class="field">
+                <label for="desc">Anything else we should know</label>
+                <textarea name="desc" id="desc" rows="4" placeholder="Dietary needs, accessibility requirements, team preferences."></textarea>
+            </div>
+
+            <button class="btn" type="submit">Confirm my place</button>
         </form>
     </div>
     <script src="index.js"></script>

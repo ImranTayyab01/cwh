@@ -1,61 +1,211 @@
-*{
-    margin : 0px;
-    padding : 0px;
-    box-sizing : border-box;
-    font-family: 'Alan Sans', 'Courier New', Courier, monospace;
+/* ------------------------------------------------------------------
+   Hacker's Throne, hackathon signup form
+   ------------------------------------------------------------------ */
+
+:root {
+    --bg-deep:      #06080f;
+    --card:         #10141f;
+    --card-border:  rgba(168, 85, 247, 0.22);
+    --field:        #0b0f1a;
+    --field-border: #262d3d;
+
+    --text:         #e8edf5;
+    --text-muted:   #a7b2c4;
+    --text-faint:   #8e99ab;
+
+    --accent:       #a855f7;
+    --accent-soft:  rgba(168, 85, 247, 0.16);
+    --accent-hover: #9333ea;
+
+    --ok:           #34d399;
+    --ok-bg:        rgba(52, 211, 153, 0.10);
+    --err:          #f87171;
+    --err-bg:       rgba(248, 113, 113, 0.10);
+
+    --radius:       14px;
 }
-.container{
-    max-width : 80%;
-    padding : 34px;
-    margin : auto;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.container h1{
-    font-size: 40px;
-    text-align : center;
-}
-input, textarea{
-    border : 2px solid black;
-    border-radius: 6px;
-    outline: none;
-       width: 80%;
-    margin: 11px auto;
-    padding: 7px;
-    font-size: 16px;
-    display: block;
-}
-form{
-    display : flex;
+
+body {
+    min-height: 100vh;
+    display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction : column;
+    padding: 40px 20px;
+
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                 "Helvetica Neue", Arial, sans-serif;
+    color: var(--text);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+
+    /* The photo is set as a cover background rather than a stretched <img>,
+       so it scales to the viewport without being upscaled past its own size. */
+    background-color: var(--bg-deep);
+    background-image: url("bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
-.btn{
-    color: white;
-    background: purple;
-    padding: 8px 12px;
-    font-size: 20px;
-    border: 2px solid white;
-    border-radius: 14px;
+
+/* Scrim: darkens the photo so form text always clears the contrast bar. */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background:
+        radial-gradient(ellipse at 50% 0%, rgba(88, 28, 135, 0.30), transparent 62%),
+        linear-gradient(180deg, rgba(6, 8, 15, 0.70) 0%, rgba(6, 8, 15, 0.82) 100%);
+}
+
+/* ---------------------------- card ---------------------------- */
+
+.container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 620px;
+    padding: 44px 44px 40px;
+
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    box-shadow:
+        0 24px 60px rgba(0, 0, 0, 0.55),
+        0 0 0 1px rgba(255, 255, 255, 0.03) inset;
+}
+
+.container h1 {
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.container > p {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-size: 15px;
+    text-align: center;
+    color: var(--text-muted);
+}
+
+/* ---------------------------- form ---------------------------- */
+
+form {
+    display: grid;
+    gap: 18px;
+}
+
+.field label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    color: var(--text-faint);
+}
+
+input,
+textarea {
+    display: block;
+    width: 100%;
+    padding: 12px 14px;
+
+    font-family: inherit;
+    font-size: 15px;
+    color: var(--text);
+
+    background: var(--field);
+    border: 1px solid var(--field-border);
+    border-radius: 9px;
+    outline: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #5d6779;
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.btn {
+    width: 100%;
+    margin-top: 6px;
+    padding: 13px 20px;
+
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    color: #ffffff;
+
+    background: var(--accent);
+    border: none;
+    border-radius: 9px;
     cursor: pointer;
-    
+    transition: background 0.15s ease, transform 0.06s ease;
 }
-h1{
-    font-size: 32px;
+
+.btn:hover  { background: var(--accent-hover); }
+.btn:active { transform: translateY(1px); }
+.btn:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--accent-soft);
 }
-p{
-    font-size: 17px;
-     text-align : center;
+
+/* ------------------------- status messages ------------------------- */
+
+.submitmsg {
+    margin-bottom: 16px;
+    padding: 12px 15px;
+
+    font-size: 14px;
+    text-align: left;
+
+    border-radius: 9px;
+    border-left: 3px solid var(--err);
+    color: var(--err);
+    background: var(--err-bg);
 }
-.bg{
-    width:100%;
-    position: absolute;
-    z-index: -1;
-    opacity: 0.66;
+
+.submitmsg.success {
+    border-left-color: var(--ok);
+    color: var(--ok);
+    background: var(--ok-bg);
 }
-.submitmsg{
-    font-size: large;
-    color: red;
-}
-.submitmsg.success{
-    color: green;
+
+/* ---------------------------- mobile ---------------------------- */
+
+@media (max-width: 560px) {
+    body            { padding: 20px 14px; }
+    .container      { padding: 32px 24px 28px; }
+    .container h1   { font-size: 24px; }
+    .row            { grid-template-columns: 1fr; }
+    body            { background-attachment: scroll; }
 }
