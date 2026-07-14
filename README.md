@@ -118,6 +118,9 @@ Visit <http://localhost/cwh/index.php>.
 Fill in the form and submit. A confirmation message appears, and a new row lands in
 `trip_us`.`trip`.
 
+## App Interface
+<img width="1895" height="973" alt="image" src="https://github.com/user-attachments/assets/f2f29b19-4f79-40ea-9f3f-5bba890121d2" />
+
 ## How It Works
 
 A single request cycle, in order:
