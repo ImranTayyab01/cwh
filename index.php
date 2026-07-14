@@ -84,7 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <?php endif; ?>
 
         <?php foreach ($errors as $error): ?>
-            <p class="submitmsg"><?= htmlspecialchars($error) ?></p>
+            <p class="submitmsg"><?= htmlspecialchars($error, ENT_QUOTES, 'UTF-8') ?></p>
         <?php endforeach; ?>
 
         <form action="index.php" method="post" novalidate>
