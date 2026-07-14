@@ -30,10 +30,6 @@
         echo "The value of variable1 and variable2 is ";
         echo "<br>";
         echo $variable1 + $variable2;
-         echo "<br>";
-          echo "The value of variable1 and variable2 is ";
-        echo "<br>";
-        echo $variable1 + $variable2;
          echo "<br>"; echo "The value of variable1 - variable2 is ";
         echo "<br>";
         echo $variable1 - $variable2;
@@ -43,6 +39,7 @@
          echo "<br>";
           echo "The value of variable1 * variable2 is ";
         echo "<br>";
+         echo $variable1 * $variable2;
          echo "<br>";
          $newvar=$variable1;
          echo "the value of new variable is";
@@ -56,19 +53,19 @@
            //comparison operator 
            echo "<h1> comparison operators </h1> ";
            echo "The value of 1==4 is ";
-           echo var_dump(1==4);
+           var_dump(1==4);
             echo "<br>";
            
            echo "The value of 1!=4 is ";
-           echo var_dump(1!=4);
+           var_dump(1!=4);
             echo "<br>";
 
            echo "The value of 1>=4 is ";
-           echo var_dump(1>=4);
+           var_dump(1>=4);
             echo "<br>";
            
            echo "The value of 1<=4 is ";
-           echo var_dump(1<=4);
+           var_dump(1<=4);
             echo "<br>";
             //increment /decrement operators 
            echo $variable1++;
@@ -86,13 +83,13 @@
             //   or(||);
             //   xor;
             $myvar = (true and true);
-            echo var_dump($myvar);
+            var_dump($myvar);
              echo "<br>";
              $myvar = (false and true);
-              echo var_dump($myvar);
+              var_dump($myvar);
                echo "<br>";
                $myvar = (false or true);
-               echo var_dump($myvar);
+               var_dump($myvar);
 
         ?>
           <?php
@@ -105,10 +102,10 @@
         // 6. object 
         echo "<br> Data types <br> ";
         $var = "This is a string";
-        echo var_dump($var);
+        var_dump($var);
          echo "<br>";
         $var = 67.2;
-        echo var_dump($var);
+        var_dump($var);
         echo "<br>";
         echo PI;
         
