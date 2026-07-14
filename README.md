@@ -1,24 +1,10 @@
-# cwh — Learning PHP
+# Hacker's Throne — Hackathon Signup Form
 
-A hands-on PHP learning repository. It contains a set of annotated tutorial scripts covering
-the language fundamentals, plus a small end-to-end project — **Hacker's Throne**, a hackathon
-signup form that validates user input and stores submissions in a MySQL database.
+A small PHP web app: a signup form for a hackathon trip. Visitors enter their details, the
+submission is validated in the browser and again on the server, and the entry is stored in a
+MySQL database using a prepared statement.
 
 ## What's inside
-
-### Tutorial scripts
-
-| File | Covers |
-| --- | --- |
-| `01_Basics.php` | Variables, constants, comments, arithmetic / assignment / comparison / increment / logical operators, and PHP's data types via `var_dump()` |
-| `02_MoreBasics.php` | `if` / `else if` / `else`, arrays, `while` / `do…while` / `for` / `foreach` loops, and user-defined functions |
-| `03_strings.php` | String functions: `strlen`, `str_word_count`, `strrev`, `strpos`, `str_replace` |
-
-Each script is a standalone page — open it in the browser to see its output.
-
-### The project — Hacker's Throne
-
-A signup form for a hackathon trip.
 
 | File | Role |
 | --- | --- |
@@ -73,7 +59,7 @@ Submit the form and the row will appear in `trip_us`.`trip`.
 
 ## Contributors
 
-- **[Imran Tayyab](https://github.com/ImranTayyab01)** — author, original tutorials and project
+- **[Imran Tayyab](https://github.com/ImranTayyab01)** — author, original project
 - **[Awais Asghar](https://github.com/Awais-Asghar)** — bug fixes, SQL injection hardening, validation, documentation
 
 Contributions are welcome — fork the repo, create a branch, and open a pull request.
