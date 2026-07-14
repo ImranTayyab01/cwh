@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320" role="img" aria-label="Hacker's Throne, a hackathon signup form built with PHP and MySQL">
+  <title>Hacker's Throne</title>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b0d17"/>
+      <stop offset="50%" stop-color="#141024"/>
+      <stop offset="100%" stop-color="#1a0f2e"/>
+    </linearGradient>
+
+    <linearGradient id="titleFill" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#a855f7"/>
+      <stop offset="35%" stop-color="#e879f9"/>
+      <stop offset="55%" stop-color="#ffffff"/>
+      <stop offset="75%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+      <animateTransform attributeName="gradientTransform" type="translate"
+                        values="-1 0; 1 0; -1 0" dur="6s" repeatCount="indefinite"/>
+    </linearGradient>
+
+    <linearGradient id="sweep" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#22d3ee" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="42"/>
+    </filter>
+
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+
+    <clipPath id="typeClip">
+      <rect x="80" y="80" width="0" height="90">
+        <animate attributeName="width" from="0" to="600" dur="1.9s"
+                 begin="0.4s" fill="freeze" calcMode="linear"/>
+      </rect>
+    </clipPath>
+
+    <style>
+      .mono { font-family: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace; }
+
+      @keyframes drift-a {
+        0%, 100% { transform: translate(0px, 0px); }
+        50%      { transform: translate(70px, -34px); }
+      }
+      @keyframes drift-b {
+        0%, 100% { transform: translate(0px, 0px); }
+        50%      { transform: translate(-60px, 30px); }
+      }
+      @keyframes blink {
+        0%, 45%   { opacity: 1; }
+        55%, 100% { opacity: 0; }
+      }
+      @keyframes rise {
+        from { opacity: 0; transform: translateY(14px); }
+        to   { opacity: 1; transform: translateY(0px); }
+      }
+      @keyframes scan {
+        from { transform: translateY(0px); }
+        to   { transform: translateY(40px); }
+      }
+      @keyframes pulse {
+        0%, 100% { opacity: 0.35; }
+        50%      { opacity: 0.9; }
+      }
+
+      .blob-a  { animation: drift-a 11s ease-in-out infinite; }
+      .blob-b  { animation: drift-b 14s ease-in-out infinite; }
+      .grid    { animation: scan 5s linear infinite; }
+      .cursor  { animation: blink 1.05s step-end infinite; }
+      .dot     { animation: pulse 2.4s ease-in-out infinite; }
+
+      .sub     { opacity: 0; animation: rise 0.7s ease-out 2.1s forwards; }
+      .chip-1  { opacity: 0; animation: rise 0.6s ease-out 2.5s forwards; }
+      .chip-2  { opacity: 0; animation: rise 0.6s ease-out 2.7s forwards; }
+      .chip-3  { opacity: 0; animation: rise 0.6s ease-out 2.9s forwards; }
+      .line    { opacity: 0; animation: rise 0.8s ease-out 3.1s forwards; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="320" fill="url(#bg)"/>
+
+  <g filter="url(#glow)" opacity="0.55">
+    <circle class="blob-a" cx="205" cy="105" r="105" fill="#7c3aed"/>
+    <circle class="blob-b" cx="985" cy="215" r="115" fill="#0891b2"/>
+    <circle class="blob-a" cx="700" cy="45"  r="80"  fill="#c026d3" opacity="0.7"/>
+  </g>
+
+  <g class="grid" opacity="0.10" stroke="#94a3b8" stroke-width="1">
+    <path d="M0 -40 H1200 M0 0 H1200 M0 40 H1200 M0 80 H1200 M0 120 H1200 M0 160 H1200 M0 200 H1200 M0 240 H1200 M0 280 H1200 M0 320 H1200"/>
+    <path d="M40 0 V320 M120 0 V320 M200 0 V320 M280 0 V320 M360 0 V320 M440 0 V320 M520 0 V320 M600 0 V320 M680 0 V320 M760 0 V320 M840 0 V320 M920 0 V320 M1000 0 V320 M1080 0 V320 M1160 0 V320"/>
+  </g>
+
+  <g class="mono">
+    <text x="80" y="62" font-size="17" fill="#22d3ee" opacity="0.85">
+      <tspan fill="#64748b">$</tspan> php -S localhost:8000
+      <tspan class="dot" fill="#4ade80"> ready</tspan>
+    </text>
+
+    <g clip-path="url(#typeClip)">
+      <text x="80" y="148" font-size="62" font-weight="700" letter-spacing="1"
+            fill="url(#titleFill)">Hacker&apos;s Throne</text>
+    </g>
+
+    <rect class="cursor" x="86" y="96" width="16" height="58" fill="#e879f9" filter="url(#soft)">
+      <animate attributeName="x" from="86" to="690" dur="1.9s" begin="0.4s" fill="freeze"/>
+    </rect>
+
+    <text class="sub" x="82" y="196" font-size="23" fill="#94a3b8">
+      A hackathon signup form, validated end to end and stored in MySQL.
+    </text>
+
+    <g font-size="16" font-weight="600">
+      <g class="chip-1">
+        <rect x="80" y="228" width="76" height="34" rx="17" fill="#7c3aed" fill-opacity="0.18" stroke="#a855f7" stroke-opacity="0.55"/>
+        <text x="118" y="250" fill="#d8b4fe" text-anchor="middle">PHP</text>
+      </g>
+      <g class="chip-2">
+        <rect x="168" y="228" width="100" height="34" rx="17" fill="#0891b2" fill-opacity="0.18" stroke="#22d3ee" stroke-opacity="0.55"/>
+        <text x="218" y="250" fill="#a5f3fc" text-anchor="middle">MySQL</text>
+      </g>
+      <g class="chip-3">
+        <rect x="280" y="228" width="230" height="34" rx="17" fill="#c026d3" fill-opacity="0.15" stroke="#e879f9" stroke-opacity="0.5"/>
+        <text x="395" y="250" fill="#f5d0fe" text-anchor="middle">Prepared Statements</text>
+      </g>
+    </g>
+
+    <rect class="line" x="80" y="292" width="1040" height="2" rx="1" fill="url(#sweep)"/>
+  </g>
+</svg>
